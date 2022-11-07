@@ -2,11 +2,22 @@ package empresa;
 
 public abstract class Moeda {
 
-	double valor;
-
+	static double valor;
+	private String nome;
+	
 	public Moeda(double valor) {
 		super();
 		this.valor = valor;
+	}
+
+
+	public String getNome() {
+		return nome;
+	}
+
+
+	public void setNome(String nome) {
+		this.nome = nome;
 	}
 
 
@@ -20,5 +31,5 @@ public abstract class Moeda {
 	
 	
 	public abstract void info();
-	public abstract void converter();	
+	public abstract double converter();	
 }

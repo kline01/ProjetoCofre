@@ -3,16 +3,20 @@ package empresa;
 import java.util.ArrayList;
 
 public class Dolar extends Moeda{
-	
-	public Dolar(double valor) {
+
+		
+	public  Dolar(double valor) {
 		super(valor);
-		// TODO Auto-generated constructor stub
 	}
 	
 	public void info() {
-		
+		System.out.println("Dolar - " + valor);
 	}
-	public void converter() {
+	public double converter() {
+		double valorConvertido;
+		return valorConvertido = valor*5.08; //O dolar atualmente está 5,08 06/11/2022
+
+		
 		
 	}
 	

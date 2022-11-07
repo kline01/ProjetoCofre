@@ -4,10 +4,12 @@ import java.util.Scanner;
 
 public class Principal {
 
+	public static  Scanner teclado = new Scanner(System.in);
+	public static  Cofrinho c = new Cofrinho();
+	
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		Scanner teclado = new Scanner(System.in);
-		Cofrinho c = new Cofrinho();
+		
 		int op;
 
 	
@@ -28,27 +30,8 @@ public class Principal {
 						System.out.println("[1] - Dolar");
 						System.out.println("[2] - Euro");
 						System.out.println("[3] - Real");
-						int opMoeda = teclado.nextInt();
-						switch (opMoeda) {
-							case 1:
-								System.out.println("--US$--");
-								System.out.println("Digite o valor: ");
-								c.add(new Dolar(teclado.nextDouble()));
-								System.out.println("Adicionada com sucesso.");
-								break;
-							case 2:
-								System.out.println("--€uro--");
-								System.out.println("Digite o valor: ");
-								c.add(new Euro(teclado.nextDouble()));
-								System.out.println("Adicionada com sucesso.");
-								break;
-							case 3:
-								System.out.println("--Real(R$)--");
-								System.out.println("Digite o valor: ");
-								c.add(new Real(teclado.nextDouble()));
-								System.out.println("Adicionada com sucesso.");
-								break;	
-							}
+						Funcoes.adicionarMoeda();
+						break;
 					case 2:
 						System.out.println("------------");
 						System.out.println("Qual moeda deseja remover?");
@@ -56,9 +39,29 @@ public class Principal {
 						System.out.println("[2] - Euro");
 						System.out.println("[3] - Real");
 						int opRemove = teclado.nextInt();
+						switch (opRemove) {
+						case 1:
+							System.out.println("--US$--");
+							System.out.println("Digite o valor que deseja remover: ");
+							c.remove(teclado.nextDouble());
+							break;
+						case 2:
+							System.out.println("--€uro--");
+							System.out.println("Digite o valor que deseja remover: ");
+							c.remove(teclado.nextDouble());					
+							break;
+						case 3:
+							System.out.println("--Real(R$)--");
+							System.out.println("Digite o valor que deseja remover: ");
+							c.remove(teclado.nextDouble());					
+							break;
+						}
 						
 					case 3:
+						System.out.println("------------");
+						c.info();
 					case 4:
+						System.out.print(c.calcularTotal());
 					case 5:
 						break;
 				}

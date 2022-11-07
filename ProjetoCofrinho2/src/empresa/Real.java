@@ -9,13 +9,11 @@ public class Real extends Moeda {
 
 	@Override
 	public void info() {
-		// TODO Auto-generated method stub
-		
+		;		
 	}
 
-	@Override
-	public void converter() {
-		// TODO Auto-generated method stub
+	public double converter() {
+		return valor; //como é moeda vigente, não há conversão
 		
 	}
 
